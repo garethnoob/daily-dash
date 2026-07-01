@@ -10,7 +10,10 @@
 		<p class="card-title">{title}</p>
 	{/if}
 	<div class="card-body">
-		{@render children()}
+		{#if children}
+			{@render children()}
+		{/if}
+
 		{#await getData()}
 			<p>Loading...</p>
 		{:then data}
@@ -30,6 +33,7 @@
 		backdrop-filter: blur(10px);
 		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 		transition: box-shadow 200ms ease, transform 200ms ease;
+		width: 50%;
 	}
 
 	.card:hover {

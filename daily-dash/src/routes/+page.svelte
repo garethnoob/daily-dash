@@ -12,22 +12,15 @@
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <div class="cards">
-	<Card title="first card">
-		<p>This is a card body</p>
-	</Card>
-	<Card title="second card">
-		<p>This is a card body</p>
-	</Card>
-	<Card title="third card">
-		<p>This is a card body</p>
+	<Card title="quote of the day">
 	</Card>
 </div>
-
 <style>
 	.cards {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 1.0rem;
 		padding: 1.5rem;
+		justify-items: center;
 	}
 </style>

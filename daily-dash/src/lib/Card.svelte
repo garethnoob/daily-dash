@@ -1,5 +1,8 @@
 <script>
+	import { getData } from '../routes/data.remote.js';
+
 	let { title = '', children } = $props();
+	
 </script>
 
 <div class="card">
@@ -8,6 +11,13 @@
 	{/if}
 	<div class="card-body">
 		{@render children()}
+		{#await getData()}
+			<p>Loading...</p>
+		{:then data}
+			<p>{data.data.quote}</p>
+		{:catch error}
+			<p>Error: {error.message}</p>
+		{/await}
 	</div>
 </div>
 
